@@ -18,5 +18,5 @@
         "dir": "ltr"
     },
 
-    {%- include metadata.json.tpl -%}
+    {% include metadata.json.tpl %}
 }

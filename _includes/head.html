@@ -1,24 +1,24 @@
 <meta charset="UTF-8">
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
 
-{%- if page.title -%}
+{% if page.title %}
     <title>{{ page.title | escape }} · {{ site.title | escape }}</title>
-{%- else -%}
+{% else %}
     <title>{{ site.title | escape }}</title>
-{%- endif -%}
+{% endif %}
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="description" content="{{site.description}}">
 
-{%- if site.gitbook_version -%}
+{% if site.gitbook_version %}
     <meta name="generator" content="Jekyll (using style of GitBook {{ site.gitbook_version | escape }})">
-{%- else -%}
+{% else %}
     <meta name="generator" content="Jekyll (using style of GitBook)">
-{%- endif -%}
+{% endif %}
 
-{%- if site.author -%}
+{% if site.author %}
     <meta name="author" content="{{ site.author | escape }}">
-{%- endif -%}
+{% endif %}
 
 <link rel="stylesheet" href="{{site.cdn-url}}/gitbook/style.css">
 <link rel="stylesheet" href="{{site.cdn-url}}/gitbook/gitbook-plugin-fontsettings/website.css">

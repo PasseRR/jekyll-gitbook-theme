@@ -2,7 +2,7 @@
 <html lang="en" >
     <head>
 
-        {%- include head.html -%}
+        {% include head.html %}
 
         {% if page.previous %}
             <link rel="prev" href="{{site.baseurl}}{{page.previous.url}}" />
@@ -17,10 +17,10 @@
     <body>
         <div class="book">
 
-            {%- include toc-date.html -%}
+            {% include toc-date.html %}
 
             <div class="book-body">
-                {%- include body.html -%}
+                {% include body.html %}
 
                 {% if page.previous %}
                     <a href="{{site.baseurl}}{{page.previous.url}}" 
@@ -48,12 +48,12 @@
             <script>
             var gitbook = gitbook || [];
             gitbook.push(function() {
-                gitbook.page.hasChanged({%- include metadata-post.json.tpl -%});
+                gitbook.page.hasChanged({% include metadata-post.json.tpl %});
             });
             </script>
         </div>
 
-        {%- include footer.html -%}
+        {% include footer.html %}
 
     </body>
 </html>
