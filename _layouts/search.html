@@ -1,5 +1,5 @@
 ---
-title: Search ...
+title: 搜索 ...
 description: "Search in this site"
 layout: post
 permalink: /search.html
@@ -12,7 +12,7 @@ exclude_from_search: true
         <img src="{{site.cdn-url}}/assets/tipuesearch/search.png" class="tipue_search_icon">
     </div>
     <div class="tipue_search_right">
-        <input type="text" name="q" id="tipue_search_input" pattern=".{3,}" title="At least 3 characters" placeholder="type to search ..." required>
+        <input type="text" name="q" id="tipue_search_input" pattern=".{2,}" title="至少输入两个字符" placeholder="输入搜索内容 ..." required>
     </div>
     <div style="clear: both;"></div>
 </form>
@@ -21,6 +21,14 @@ exclude_from_search: true
 
 <script>
     $(document).ready(function() {
-        $('#tipue_search_input').tipuesearch();
+        $('#tipue_search_input').tipuesearch({
+            'show': 10,              // 每页显示的最大搜索记录数，默认值：10
+            'showURL': false,        // 是否将URL显示在每个搜索结果中，默认值：true
+            'newWindow': false,       // 点击搜索结果时是否在新的浏览器选项卡中打开页面，默认值：false
+            'footerPages': 10,       // 页脚中显示的最大页面选择数，默认值：3
+            'minimumLength': 2,      // 搜索关键字中最小的字符长度，默认值：3
+            'wholeWords': false,     // 是否不使用英语以外的其他语言，默认值：true
+            'showTitleCount': false  // 是否将搜索结果的数量显示在浏览器选项卡的标题中，默认值：true
+        });
     });
 </script>
