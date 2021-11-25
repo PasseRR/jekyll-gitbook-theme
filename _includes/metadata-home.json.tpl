@@ -3,7 +3,7 @@
         "title": "Introduction",
         "level": "1.1",
         "depth": 1,
-        {% assign reversed_posts = site.chapters | sort_natural: "title" %}
+        {% assign reversed_posts = site.chapters | sort: "order" %}
 
         {% if reversed_posts %}
         "next": {

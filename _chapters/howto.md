@@ -1,7 +1,8 @@
 ---
-title: 2.How to Get Started
+title: 2.2.How to Get Started
 author: Tao He
 layout: post
+order: 2.2
 ---
 
 The jekyll-gitbook theme can be used just as other [Jekyll themes][1].
