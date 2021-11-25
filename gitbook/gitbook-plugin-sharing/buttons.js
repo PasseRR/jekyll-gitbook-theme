@@ -59,6 +59,7 @@ require(['gitbook', 'jquery'], function (gitbook, $) {
             var site = SITES[id];
 
             return {
+                className: site.icon,
                 text: site.label,
                 onClick: site.onClick
             };
