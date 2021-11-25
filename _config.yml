@@ -11,6 +11,10 @@ baseurl: '/jekyll-gitbook-theme'
 cdn-url: 'https://cdn.jsdelivr.net/gh/PasseRR/jekyll-gitbook-theme'
 # ico地址
 ico-url: 'https://cdn.jsdelivr.net/gh/PasseRR/jekyll-gitbook-theme/gitbook/images/favicon.ico'
+collections:
+  chapters:
+    permalink: /:categories/:name:output_ext
+    output: true
 rss: RSS
 
 toc:
