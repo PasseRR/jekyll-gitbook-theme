@@ -3,11 +3,7 @@
         <!-- Title -->
         <h1>
             <i class="fa fa-circle-o-notch fa-spin"></i>
-            {% if page.title %}
-                <a href="." >{{ page.title | escape }}</a>
-            {% else %}
-                <a href="." >{{ site.title | escape }}</a>
-            {% endif %}
+            <a href="{{site.baseurl}}/index.html" >{{ site.title | escape }}</a>
         </h1>
     </div>
     <div class="page-wrapper" tabindex="-1" role="main">
@@ -18,8 +14,6 @@
 
                         {% if page.title %}
                             <h1 id="{{ page.id }}">{{ page.title | escape }}</h1>
-                        {% else %}
-                            <h1 id="{{ page.id }}">{{ site.title | escape }}</h1>
                         {% endif %}
 
                         {{ content }}

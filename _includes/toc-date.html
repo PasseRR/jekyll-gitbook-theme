@@ -4,53 +4,56 @@
     </div> -->
     <nav role="navigation">
         <ul class="summary">
-            {% if page.url == "/index.html" or page.url == "/" %}
-            <li class="chapter active" data-level="1.1" data-path="{{site.baseurl}}">
-            {% else %}
-            <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}">
-            {% endif %}
-                <a href="{{site.baseurl}}">
-                    {{ site.title | escape }}
-                </a>
-            </li>
+                        {% if page.url == "/index.html" or page.url == "/" %}
+                        <li class="chapter active" data-level="1.1" data-path="{{site.baseurl}}">
+                        {% else %}
+                        <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}">
+                        {% endif %}
+                            <a style="font-size: 24pt;" href="{{site.baseurl}}/index.html">
+                                {{ site.title | escape }}
+                            </a>
+                        </li>
 
+            <li class="divider"></li>
+            <li>
+                <a href="{{site.baseurl}}/search.html">搜索<i class="fa fa-search"></i></a>
+            </li>
             <li class="divider"></li>
 
             <!-- search link -->
-            <li>
-                <a href="{{site.baseurl}}/search">
-                    Search
-                </a>
-            </li>
+            <!--            <li>-->
 
-            <li class="divider"></li>
+            <!--            </li>-->
 
-            {% assign reversed_posts = site.posts | reverse %}
+            <!--            <li class="divider"></li>-->
+
+            <!-- 按照标题排序 -->
+            {% assign reversed_posts = site.posts | sort: "title" %}
 
             {% for post in reversed_posts %}
-                {% if page.url == post.url %}
-                <li class="chapter active" data-level="1.2" data-path="{{site.baseurl}}{{post.url}}">
+            {% if page.url == post.url %}
+            <li class="chapter active" data-level="1.2" data-path="{{site.baseurl}}{{post.url}}">
                 {% else %}
-                <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}{{post.url}}">
+            <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}{{post.url}}">
                 {% endif %}
-                    <a href="{{site.baseurl}}{{post.url}}">
-                        {{ post.title | escape }}
-                    </a>
-                    {% if site.toc.enabled %}
-                        {% if page.url == post.url %}
-                            {% include toc.html html=content h_min=site.toc.h_min h_max=site.toc.h_max %}
-                        {% endif %}
-                    {% endif %}
-                </li>
+                <a href="{{site.baseurl}}{{post.url}}">
+                    {{ post.title | escape }}
+                </a>
+                <!--                    {% if site.toc.enabled %}-->
+                <!--                        {% if page.url == post.url %}-->
+                <!--                            {% include toc.html html=content h_min=site.toc.h_min h_max=site.toc.h_max %}-->
+                <!--                        {% endif %}-->
+                <!--                    {% endif %}-->
+            </li>
             {% endfor %}
 
-            <li class="divider"></li>
+<!--            <li class="divider"></li>-->
 
-            <li>
-                <a href="https://github.com/sighingnow/jekyll-gitbook/fork" target="blank" class="gitbook-link">
-                    Fork it Now!
-                </a>
-            </li>
+<!--            <li>-->
+<!--                <a href="https://github.com/sighingnow/jekyll-gitbook/fork" target="blank" class="gitbook-link">-->
+<!--                    Fork it Now!-->
+<!--                </a>-->
+<!--            </li>-->
         </ul>
     </nav>
 </div>
