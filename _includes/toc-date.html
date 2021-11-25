@@ -18,7 +18,7 @@
             <li class="divider"></li>
 
             <!-- 按照标题排序 -->
-            {% assign reversed_posts = site.chapters | sort: "title" %}
+            {% assign reversed_posts = site.chapters | sort_natural: "title" %}
 
             {% for post in reversed_posts %}
             {% if page.url == post.url %}
