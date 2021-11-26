@@ -8,11 +8,14 @@ gitbook_version: 3.2.3
 
 baseurl: '/jekyll-gitbook-theme'
 # 主题cdn地址
-cdn-url: 'https://cdn.jsdelivr.net/gh/PasseRR/jekyll-gitbook-theme'
+cdn-url: '/jekyll-gitbook-theme'
 # ico地址
 ico-url: 'https://cdn.jsdelivr.net/gh/PasseRR/jekyll-gitbook-theme/gitbook/images/favicon.ico'
 # 目录定义
 collections:
+  pages:
+    permalink: /:path
+    output: true
   chapters:
     permalink: /:categories/:name:output_ext
     output: true
