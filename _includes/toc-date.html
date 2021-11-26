@@ -16,8 +16,7 @@
                 <a href="{{site.baseurl}}/search.html">搜索<i class="fa fa-search"></i></a>
             </li>
             <li class="divider"></li>
-
-            <!-- 按照标题排序 -->
+            
             {% assign reversed_posts = site.chapters | sort: "order" %}
 
             {% for post in reversed_posts %}

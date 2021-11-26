@@ -1,4 +1,11 @@
-    "config": {
+{
+    "page": {
+        "title": "Introduction",
+        "level": "1.1",
+        "depth": 1,
+        "dir": "ltr"
+    },
+	"config": {
         "plugins": ["fontsettings", "highlight", "livereload", "lunr", "search", "sharing", "theme-default", "livereload"],
         "styles": {
             "ebook": "styles/ebook.css",
@@ -80,3 +87,4 @@
     "book": {
         "language": ""
     }
+}

@@ -1,17 +1,30 @@
 <!DOCTYPE HTML>
+{% assign previous = nil %}
+{% assign next = nil %}
+{% if page.layout == 'post' %}
+    {% assign sorted = site.chapters | sort: "order" %}
+    
+    {% for p in sorted %}
+    {% if p.order < page.order %}
+    {% assign previous = p %}
+    {% endif %}
+    
+    {% if next == nil and p.order > page.order %}
+    {% assign next = p %}
+    {% endif %}
+    {% endfor %}
+{% endif%}
 <html lang="en" >
     <head>
 
         {% include head.html %}
 
-        {% if page.previous %}
-            <link rel="prev" href="{{site.baseurl}}{{page.previous.url}}" />
-        {% else %}
-            <link rel="prev" href="{{site.baseurl}}/" />
+        {% if previous %}
+            <link rel="prev" href="{{site.baseurl}}{{previous.url}}" />
         {% endif %}
 
-        {% if page.next %}
-            <link rel="next" href="{{site.baseurl}}{{page.next.url}}" />
+        {% if next %}
+            <link rel="next" href="{{site.baseurl}}{{next.url}}" />
         {% endif %}
     </head>
     <body>
@@ -22,24 +35,18 @@
             <div class="book-body">
                 {% include body.html %}
 
-                {% if page.previous %}
-                    <a href="{{site.baseurl}}{{page.previous.url}}" 
-                       title="{{page.previous.title}}"
-                       class="navigation navigation-prev navigation-unique" aria-label="Previous page: {{page.previous.title}}">
-                        <i class="fa fa-angle-left"></i>
-                    </a>
-                {% else %}
-                    <a href="{{site.baseurl}}/"
-                       title="{{site.title}}"
-                       class="navigation navigation-prev" aria-label="Previous page: {{site.title}}">
+                {% if previous %}
+                    <a href="{{site.baseurl}}{{previous.url}}" 
+                       title="{{previous.title}}"
+                       class="navigation navigation-prev navigation-unique" aria-label="Previous page: {{previous.title}}">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 {% endif %}
 
-                {% if page.next %}
-                    <a href="{{site.baseurl}}{{page.next.url}}" 
-                       title="{{page.next.title}}"
-                       class="navigation navigation-next" aria-label="Next page: {{page.next.title}}">
+                {% if next %}
+                    <a href="{{site.baseurl}}{{next.url}}" 
+                       title="{{next.title}}"
+                       class="navigation navigation-next" aria-label="Next page: {{next.title}}">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 {% endif %}
@@ -48,7 +55,7 @@
             <script>
             var gitbook = gitbook || [];
             gitbook.push(function() {
-                gitbook.page.hasChanged({% include metadata-post.json.tpl %});
+                gitbook.page.hasChanged({% include metadata.json.tpl %});
             });
             </script>
         </div>
