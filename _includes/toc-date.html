@@ -25,14 +25,13 @@
                 {% else %}
             <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}{{post.url}}">
                 {% endif %}
-                <a href="{{site.baseurl}}{{post.url}}">
+                <a href="{{site.baseurl}}{{post.url}}"
+                {% if post.padding %}
+                   style="padding-left: 10%"
+               {% endif %}
+                >
                     {{ post.title | escape }}
                 </a>
-                {% if site.toc.enabled %}
-                {% if page.url == post.url %}
-                {% include toc.html html=content h_min=site.toc.h_min h_max=site.toc.h_max %}
-                {% endif %}
-                {% endif %}
             </li>
             {% endfor %}
 

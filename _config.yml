@@ -50,6 +50,6 @@ permalink: /:categories/:name:output_ext
 exclude:
   - _drafts
 
-destination: ./_site
+destination: ./_site 
 incremental: false
 regenerate: true
