@@ -26,8 +26,9 @@
             <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}{{post.url}}">
                 {% endif %}
                 <a href="{{site.baseurl}}{{post.url}}"
-                {% if post.padding %}
-                   style="padding-left: 10%"
+                   title="{{ post.title }}"
+                {% if post.level %}
+                   style="padding-left: {{post.level}}0%"
                {% endif %}
                 >
                     {{ post.title | escape }}
