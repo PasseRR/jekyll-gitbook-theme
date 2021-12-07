@@ -1,19 +1,17 @@
-{% if page.mermaid %}
 <script>
-    $(function () {
-        mermaid.initialize({
-            startOnLoad: true,
-            // default, dark, neutral, forest
-            theme: "default",
-            flowchart: {
-                useMaxWidth: true,
-                htmlLabels: true
-            }
-        });
-        window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
+$(function () {
+    mermaid.initialize({
+        startOnLoad: true,
+        // default, dark, neutral, forest
+        theme: "default",
+        flowchart: {
+            useMaxWidth: true,
+            htmlLabels: true
+        }
     });
+    window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
+});
 </script>
-{% endif %}
 
 <div class="body-inner">
     <div class="book-header" role="navigation">
