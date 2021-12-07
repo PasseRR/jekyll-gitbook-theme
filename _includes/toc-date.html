@@ -16,25 +16,8 @@
                 <a href="{{site.baseurl}}/search.html">搜索<i class="fa fa-search"></i></a>
             </li>
             <li class="divider"></li>
-            
-            {% assign reversed_posts = site.chapters | sort: "order" %}
 
-            {% for post in reversed_posts %}
-            {% if page.url == post.url %}
-            <li class="chapter active" data-level="1.2" data-path="{{site.baseurl}}{{post.url}}">
-                {% else %}
-            <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}{{post.url}}">
-                {% endif %}
-                <a href="{{site.baseurl}}{{post.url}}"
-                   title="{{ post.title }}"
-                {% if post.level %}
-                   style="padding-left: {{post.level}}0%"
-               {% endif %}
-                >
-                    {{ post.title | escape }}
-                </a>
-            </li>
-            {% endfor %}
+            {% include toc-children.html level=0 %}
 
         </ul>
         <footer>
