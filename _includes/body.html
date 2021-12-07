@@ -1,9 +1,27 @@
+{% if page.mermaid %}
+<script src="//cdn.jsdelivr.net/npm/mermaid@8.13.4/dist/mermaid.min.js"></script>
+<script>
+    $(function () {
+        mermaid.initialize({
+            startOnLoad: true,
+            // default, dark, neutral, forest
+            theme: "default",
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true
+            }
+        });
+        window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
+    });
+</script>
+{% endif %}
+
 <div class="body-inner">
     <div class="book-header" role="navigation">
         <!-- Title -->
         <h1>
             <i class="fa fa-circle-o-notch fa-spin"></i>
-            <a href="{{site.baseurl}}/index.html" >{{ site.title | escape }}</a>
+            <a href="{{site.baseurl}}/index.html">{{ site.title | escape }}</a>
         </h1>
     </div>
     <div class="page-wrapper" tabindex="-1" role="main">
@@ -13,14 +31,14 @@
                     <section class="normal markdown-section">
 
                         {% if page.title %}
-                            <h1 id="{{ page.id }}">{{ page.title | escape }}</h1>
+                        <h1 id="{{ page.id }}">{{ page.title | escape }}</h1>
                         {% endif %}
 
                         {{ content }}
                     </section>
                 </div>
 
-                 <!-- {% include search.html %} -->
+                <!-- {% include search.html %} -->
             </div>
         </div>
     </div>
