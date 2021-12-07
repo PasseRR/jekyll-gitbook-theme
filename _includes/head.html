@@ -33,3 +33,21 @@
 <link rel="shortcut icon" href="{{site.ico-url}}" type="image/x-icon">
 <link rel="stylesheet" href="{{site.cdn-url}}/assets/tipuesearch/css/tipuesearch.css">
 <script src="{{site.cdn-url}}/gitbook/jquery-3.1.1.min.js"></script>
+{% if page.mermaid %}
+<script>
+    function initMermaid() {
+        var config = {
+            startOnLoad: true,
+            theme: "forest",
+            flowchart:{
+                useMaxWidth: true,
+                htmlLabels: true
+            }
+        };
+        mermaid.initialize(config);
+        window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
+    }
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/mermaid@8.13.4/dist/mermaid.min.js" async onload="initMermaid()"></script>
+{% endif %}
