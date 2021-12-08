@@ -10,7 +10,7 @@
 
     {% assign children = [] %}
     {% if post.k %}
-        {% assign children = site.chapters | where_exp: "it", "it.pk == page.k" %}
+        {% assign children = site.chapters | where_exp: "it", "it.pk == post.k" %}
     {% endif %}
     <li class="{{cls}}" data-level="1.1" data-path="{{site.baseurl}}{{post.url}}">
         <a href="{{site.baseurl}}{{post.url}}" title="{{ post.title }}"
@@ -21,7 +21,7 @@
             {{ post.title | escape }}
         </a>
     
-        {% if children %}
+        {% if children.size %}
         <ul class="articles">
             {% assign l = include.level | plus: 1 %}
             {% include toc-children.html level=l key=post.k %}
