@@ -34,3 +34,29 @@
 <link rel="stylesheet" href="{{site.cdn-url}}/assets/tipuesearch/css/tipuesearch.css">
 <script src="{{site.cdn-url}}/gitbook/jquery-3.1.1.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/mermaid@8.13.4/dist/mermaid.min.js"></script>
+
+<!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga }}"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', '{{ site.ga }}');
+</script>
+<!-- 百度统计 -->
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?{{ site.hm }}";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+    _hmt.push(['_setAccount', '{{ site.hm }}']);
+    _hmt.push(['_trackPageview', '{{ page.url }}']);
+    _hmt.push(['_setAutoPageview', true]);
+</script>
