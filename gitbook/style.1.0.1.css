@@ -3500,7 +3500,7 @@ table {
 .markdown-section * {
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
-    font-size: inherit
+    /*font-size: inherit*/
 }
 
 .markdown-section > :first-child {
