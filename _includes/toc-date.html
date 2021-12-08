@@ -2,11 +2,11 @@
     <nav role="navigation">
         <ul class="summary" style="padding-bottom: 20px;">
             {% if page.url == "/index.html" or page.url == "/" %}
-            <li class="chapter active" data-level="1.1" data-path="{{site.baseurl}}">
+            <li class="active" data-level="1.1" data-path="{{site.baseurl}}">
                 {% else %}
-            <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}">
+            <li data-level="1.1" data-path="{{site.baseurl}}">
                 {% endif %}
-                <a style="font-size: 24pt;" href="{{site.baseurl}}/index.html">
+                <a style="font-size: 24pt;" href="{{site.baseurl}}/index.html" title="{{site.title}}">
                     {{ site.title | escape }}
                 </a>
             </li>

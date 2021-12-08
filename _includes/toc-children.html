@@ -1,23 +1,33 @@
 {% assign posts = site.chapters | where_exp: "it", "it.pk == include.key" | sort: "order" %}
+
 {% for post in posts%}
-{% if page.url == post.url %}
-<li class="chapter active" data-level="1.2" data-path="{{site.baseurl}}{{post.url}}">
-    {% else %}
-<li class="chapter" data-level="1.1" data-path="{{site.baseurl}}{{post.url}}">
+
+    {% assign cls = "chapter" %}
+    
+    {% if page.url == post.url %}
+        {% assign cls = cls | append: " active" %}
     {% endif %}
-    <a href="{{site.baseurl}}{{post.url}}"
-       title="{{ post.title }}"
-       {% if include.level > 0 %}
-       style="padding-left: {{include.level}}0%"
-       {% endif %}
-    >
-        {{ post.title | escape }}
-    </a>
-</li>
-
-{% if post.k %}
-{% assign l = include.level | plus: 1 %}
-{% include toc-children.html level=l key=post.k %}
-{% endif %}
-
-{% endfor%}
+    
+    {% if post.k %}
+        {% assign children = site.chapters | where_exp: "it", "it.pk == page.k" %}
+        {% if children.size %}
+            {% assign cls = cls | append: " expanded" %}
+        {% endif %}
+    {% endif %}
+    <li class="{{cls}}" data-level="1.1" data-path="{{site.baseurl}}{{post.url}}">
+        <a href="{{site.baseurl}}{{post.url}}" title="{{ post.title }}"
+            {% if include.level > 0%}
+            style="padding-left: {{ 10 | times: include.level}}%"
+            {% endif %}
+        >
+            {{ post.title | escape }}
+        </a>
+    
+        {% if cls contains "expanded" %}
+        <ul class="articles">
+            {% assign l = include.level | plus: 1 %}
+            {% include toc-children.html level=l key=post.k %}
+        </ul>
+        {% endif%}
+    </li>
+{% endfor %}
