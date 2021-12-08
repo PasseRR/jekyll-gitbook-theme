@@ -7,12 +7,10 @@
     {% if page.url == post.url %}
         {% assign cls = cls | append: " active" %}
     {% endif %}
-    
+
+    {% assign children = [] %}
     {% if post.k %}
         {% assign children = site.chapters | where_exp: "it", "it.pk == page.k" %}
-        {% if children.size %}
-            {% assign cls = cls | append: " expanded" %}
-        {% endif %}
     {% endif %}
     <li class="{{cls}}" data-level="1.1" data-path="{{site.baseurl}}{{post.url}}">
         <a href="{{site.baseurl}}{{post.url}}" title="{{ post.title }}"
@@ -23,7 +21,7 @@
             {{ post.title | escape }}
         </a>
     
-        {% if cls contains "expanded" %}
+        {% if children %}
         <ul class="articles">
             {% assign l = include.level | plus: 1 %}
             {% include toc-children.html level=l key=post.k %}
