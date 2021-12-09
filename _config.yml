@@ -3,6 +3,8 @@ title: Jekyll Gitbook Demo
 author: PasseRR
 description: Build Jekyll site with the GitBook style.
 
+date: timestamp
+
 version: 1.0
 gitbook_version: 3.2.3
 
@@ -46,6 +48,11 @@ markdown_ext: markdown,mkdown,mkdn,mkd,md
 
 # Permalinks
 permalink: /:categories/:name:output_ext
+
+# google分析gtag
+ga: G-1L1DPX3PFD
+# 百度统计hm
+hm: f6a0d2cc07d505a22b5a318eee45a715
 
 exclude:
   - _drafts
