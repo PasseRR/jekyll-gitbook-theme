@@ -8,6 +8,7 @@ date: timestamp
 version: 1.0
 gitbook_version: 3.2.3
 
+url: "https://www.xiehai.win"
 baseurl: '/jekyll-gitbook-theme'
 # 主题cdn地址
 cdn-url: 'https://cdn.jsdelivr.net/gh/PasseRR/jekyll-gitbook-theme'
@@ -60,3 +61,6 @@ exclude:
 destination: ./_site 
 incremental: false
 regenerate: true
+
+plugins:
+  - jekyll-sitemap
