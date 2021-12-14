@@ -22,10 +22,9 @@
         <a href="{{site.baseurl}}{{post.url}}" title="{{ post.title }}">
             {{ post.title | escape }}
         </a>
-        {% if children.size > 0 %}
+        {% if children != nil and children.size > 0 %}
         <ul class="articles">
-            {% assign l = include.level | plus: 1 %}
-            {% include toc-children.html level=l key=post.k category=post.category %}
+            {% include toc-children.html key=post.k category=post.category %}
         </ul>
         {% endif%}
     </li>
