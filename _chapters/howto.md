@@ -1,7 +1,9 @@
 ---
 title: 3.How to Get Started
+category: Jekyll1
 author: Tao He
 layout: post
+k: 1
 order: 3
 ---
 
