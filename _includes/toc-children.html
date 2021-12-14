@@ -1,10 +1,4 @@
-{% assign exp = "it.pk == include.key" %}
-
-{% if include.category %}
-{% assign exp = exp | append: " and it.category == include.category" %}
-{% endif %}
-
-{% assign posts = site.chapters | where_exp: "it", exp | sort: "order" %}
+{% assign posts = site.chapters | where_exp: "it", "it.pk == include.key" | where_exp: "it", "include.key == nil or it.category == include.category" | sort: "order" %}
 
 {% for post in posts%}
 
