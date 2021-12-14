@@ -14,7 +14,8 @@
 
     {% assign children = [] %}
     {% if post.k %}
-        {% assign children = site.chapters where_exp: "it", "it.pk == post.k and it.category == post.category" %}
+        {% assign children = site.chapters | where_exp: "it", "it.pk == post.k" %}
+        {% assign children = site.chapters | where_exp: "it", "it.category == post.category" %}
     {% endif %}
     <li class="{{cls}}" data-level="1.1" data-path="{{site.baseurl}}{{post.url}}">
         <a href="{{site.baseurl}}{{post.url}}" title="{{ post.title }}">
