@@ -2,6 +2,7 @@
 title: 3new.How to Get Started
 author: Tao He
 layout: post
+mermaid: true
 order: 4
 ---
 
