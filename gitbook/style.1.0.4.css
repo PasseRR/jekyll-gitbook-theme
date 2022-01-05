@@ -3639,7 +3639,7 @@ table {
     padding: .2em;
     margin: 0;
     font-size: .85em;
-    font-weight: bolder;
+    /*font-weight: bolder;*/
     color: deeppink;
     background-color: #f7f7f7
 }
