@@ -34,6 +34,7 @@
 <link rel="stylesheet" href="{{site.cdn-url}}/assets/tipuesearch/css/tipuesearch.css">
 <link rel="stylesheet" href="{{site.cdn-url}}/gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
 <script src="{{site.cdn-url}}/gitbook/jquery-3.1.1.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/mermaid@8.13.8/dist/mermaid.min.js"></script>
 
 <!-- Google Analytics -->
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -47,20 +48,3 @@
 
     gtag('config', '{{ site.ga }}');
 </script>
-
-{% if page.mermaid %}
-<script src="//cdn.jsdelivr.net/npm/mermaid@8.13.8/dist/mermaid.min.js"></script>
-<script>
-    $(function () {
-        mermaid.initialize({
-            startOnLoad: true,
-            theme: "dark",
-            flowchart: {
-                useMaxWidth: true,
-                htmlLabels: true
-            }
-        });
-        window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
-    });
-</script>
-{% endif %}

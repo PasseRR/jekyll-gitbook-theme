@@ -13,6 +13,20 @@
     _hmt.push(['_setAutoPageview', true]);
 </script>
 
+<script>
+    $(function () {
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: "dark",
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true
+            }
+        });
+        window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
+    });
+</script>
+
 <div class="body-inner">
     <div class="book-header" role="navigation">
         <!-- Title -->
