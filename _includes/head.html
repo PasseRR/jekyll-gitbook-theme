@@ -10,6 +10,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="description" content="{{site.description}}">
 
+{% if page.noindex %}
+<meta name="robots" content="noindex">
+{% endif %}
+
 {% if site.gitbook_version %}
     <meta name="generator" content="Jekyll (using style of GitBook {{ site.gitbook_version | escape }})">
 {% else %}
@@ -24,10 +28,6 @@
 <!--<link rel="stylesheet" href="{{site.cdn-url}}/gitbook/gitbook-plugin-fontsettings/website.css">-->
 
 <link rel="stylesheet" href="{{site.cdn-url}}/gitbook/rouge-highlight-colorful-1.0.1.css">
-
-{% if page.noindex %}
-<meta name="robots" content="noindex">
-{% endif %}
 
 <meta name="HandheldFriendly" content="true"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
