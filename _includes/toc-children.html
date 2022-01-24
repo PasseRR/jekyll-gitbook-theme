@@ -1,7 +1,7 @@
 {% assign posts = site.chapters | where_exp: "it", "it.pk == include.key" | sort: "order" %}
 
 {% if include.category %}
-{% assign posts = posts | where_exp: "it", "it.category == include.category" %}
+{% assign posts = posts | where_exp: "it", "it.categories contains include.category" %}
 {% endif %}
 
 {% for post in posts%}
@@ -15,7 +15,7 @@
     {% assign children = [] %}
     {% if post.k %}
         {% assign children = site.chapters | where_exp: "it", "it.pk == post.k" %}
-        {% assign children = children | where_exp: "it", "it.categories contains post.category" %}
+        {% assign children = children | where_exp: "it", "it.categories[0] == post.categories[0]" %}
     {% endif %}
     <li class="{{cls}}" data-level="1.1" data-path="{{site.baseurl}}{{post.url}}">
         <a href="{{site.baseurl}}{{post.url}}" title="{{ post.title }}">
@@ -23,7 +23,7 @@
         </a>
         {% if children != nil and children.size > 0 %}
         <ul class="articles">
-            {% include toc-children.html key=post.k category=post.category %}
+            {% include toc-children.html key=post.k category=post.categories.0 %}
         </ul>
         {% endif%}
     </li>
