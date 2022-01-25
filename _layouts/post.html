@@ -1,55 +1,13 @@
 <!DOCTYPE HTML>
-{% assign previous = nil %}
-{% assign next = nil %}
-{% if page.layout == 'post' %}
-    {% assign sorted = site.chapters | sort: "order" %}
-    
-    {% for p in sorted %}
-    {% if p.order < page.order %}
-    {% assign previous = p %}
-    {% endif %}
-    
-    {% if next == nil and p.order > page.order %}
-    {% assign next = p %}
-    {% endif %}
-    {% endfor %}
-{% endif%}
 <html lang="en" >
     <head>
-
         {% include head.html %}
-
-        {% if previous %}
-            <link rel="prev" href="{{site.baseurl}}{{previous.url}}" />
-        {% endif %}
-
-        {% if next %}
-            <link rel="next" href="{{site.baseurl}}{{next.url}}" />
-        {% endif %}
     </head>
     <body>
         <div class="book">
-
             {% include toc-date.html %}
-
             <div class="book-body">
                 {% include body.html %}
-
-                {% if previous %}
-                    <a href="{{site.baseurl}}{{previous.url}}" 
-                       title="{{previous.title}}"
-                       class="navigation navigation-prev navigation-unique" aria-label="Previous page: {{previous.title}}">
-                        <i class="fa fa-angle-left"></i>
-                    </a>
-                {% endif %}
-
-                {% if next %}
-                    <a href="{{site.baseurl}}{{next.url}}" 
-                       title="{{next.title}}"
-                       class="navigation navigation-next" aria-label="Next page: {{next.title}}">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
-                {% endif %}
             </div>
 
             <script>
