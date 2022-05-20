@@ -11,9 +11,7 @@ gitbook_version: 3.2.3
 url: "https://www.xiehai.win"
 baseurl: '/jekyll-gitbook-theme'
 # 主题cdn地址
-cdn-url: 'https://cdn.jsdelivr.net/gh/PasseRR/jekyll-gitbook-theme'
-# ico地址
-ico-url: 'https://cdn.jsdelivr.net/gh/PasseRR/jekyll-gitbook-theme/gitbook/images/favicon.ico'
+theme-cdn: 'https://fastly.jsdelivr.net/gh/PasseRR/jekyll-gitbook-theme'
 # 目录定义
 collections:
   chapters:
