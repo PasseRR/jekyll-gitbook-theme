@@ -1,3 +1,8 @@
+th {
+    background-color: #008cff;
+    color: white;
+}
+
 /* Tips, warnings, and dangers */
 .markdown-section blockquote.block-tip {
     border-color: var(--c-tip);
