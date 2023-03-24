@@ -3694,7 +3694,7 @@ table {
 .markdown-section blockquote {
     margin: 0;
     margin-bottom: .85em;
-    padding: 5px 15px;
+    padding: 10px 15px;
     color: #858585;
     border-left: 4px solid #e5e5e5
 }
