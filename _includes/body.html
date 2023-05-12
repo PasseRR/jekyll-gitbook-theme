@@ -5,12 +5,12 @@
         && window.location.host.indexOf('//192.168.') === -1;
 
     if (isProductEnv) {
-        // Google Analytics 
+        /* Google Analytics */
         window.dataLayer = window.dataLayer || [];
         dataLayer.push('js', new Date());
         dataLayer.push('config', '{{ site.ga }}');
 
-        // 百度统计
+        /* 百度统计 */
         var _hmt = _hmt || [];
         (function () {
             var hm = document.createElement("script");
