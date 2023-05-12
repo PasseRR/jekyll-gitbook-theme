@@ -1,8 +1,8 @@
 <script>
-    var isProductEnv = window && window.location && window.location.host
-        && window.location.host.indexOf('//127.0.0.1') === -1
-        && window.location.host.indexOf('//localhost') === -1
-        && window.location.host.indexOf('//192.168.') === -1;
+    const isProductEnv = window && window.location && window.location.host
+        && window.location.host.indexOf('127.0.0.1') === -1
+        && window.location.host.indexOf('localhost') === -1
+        && window.location.host.indexOf('192.168.') === -1;
 
     if (isProductEnv) {
         /* Google Analytics */
