@@ -9,7 +9,7 @@ $(document).ready(function () {
             code = codes.length ? codes : undefined,
             copyBtn = $('<button class="fa fa-clipboard" style="z-index: 10; position: relative; border: none; float: right; background: none"></button>');
         // 不存在code节点或者是mermaid图
-        if (!code || !code.hasClass('language-mermaid')) {
+        if (code && !code.hasClass('language-mermaid')) {
             text = code ? code.text() : codeBlock.innerText;
             // 添加复制按钮
             $(codeBlock).prepend(copyBtn);
